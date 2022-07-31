@@ -1,6 +1,6 @@
 node {
 
-	def application = "myApplicaiton"
+	def application = "myapplicaiton"
 
 	def dockerhubaccountid = "sumitkiit"
 
