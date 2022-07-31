@@ -35,7 +35,7 @@ node {
 
 	stage('Deploy') {
 
-		sudo sh ("docker run -d -p 81:80  ${dockerhubaccountid}/${application}:${BUILD_NUMBER}")
+		 sh ("docker run -d -p 81:80  ${dockerhubaccountid}/${application}:${BUILD_NUMBER}")
 
 	}
 
@@ -45,7 +45,7 @@ node {
 
 		// remove docker old images
 
-		sudo sh("docker rmi ${dockerhubaccountid}/${application}:latest -f")
+		 sh("docker rmi ${dockerhubaccountid}/${application}:latest -f")
 
    }
 
