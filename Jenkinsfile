@@ -35,7 +35,7 @@ node {
 
 	stage('Deploy') {
 
-		dudo sh ("docker run -d -p 81:80  ${dockerhubaccountid}/${application}:${BUILD_NUMBER}")
+		sudo sh ("docker run -d -p 81:80  ${dockerhubaccountid}/${application}:${BUILD_NUMBER}")
 
 	}
 
