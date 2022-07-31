@@ -23,7 +23,6 @@ node {
 	stage('Push image') {
 
 		withDockerRegistry([ credentialsId: "dockerHub", url: "" ]) {
-
 		app.push()
 
 		app.push("latest")
@@ -36,7 +35,7 @@ node {
 
 	stage('Deploy') {
 
-		dudo sh ("docker run -d -p 81:80 -v /var/log/:/var/log/ ${dockerhubaccountid}/${application}:${BUILD_NUMBER}")
+		dudo sh ("docker run -d -p 81:80  ${dockerhubaccountid}/${application}:${BUILD_NUMBER}")
 
 	}
 
