@@ -36,7 +36,7 @@ node {
 
 	stage('Deploy') {
 
-		sh ("docker run -d -p 81:80 -v /var/log/:/var/log/ ${dockerhubaccountid}/${application}:${BUILD_NUMBER}")
+		dudo sh ("docker run -d -p 81:80 -v /var/log/:/var/log/ ${dockerhubaccountid}/${application}:${BUILD_NUMBER}")
 
 	}
 
@@ -44,9 +44,9 @@ node {
 
 	stage('Remove old images') {
 
-		// remove docker pld images
+		// remove docker old images
 
-		sh("docker rmi ${dockerhubaccountid}/${application}:latest -f")
+		sudo sh("docker rmi ${dockerhubaccountid}/${application}:latest -f")
 
    }
 
